@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>时差换算器</title>
+    <script>
+        function convertTime() {
+            const cityOffsets = {
+                "北京": 8,
+                "纽约": -5,
+                "伦敦": 0,
+                "东京": 9,
+                "悉尼": 11,
+                "洛杉矶": -8
+            };
+            
+            let fromCity = document.getElementById("fromCity").value;
+            let toCity = document.getElementById("toCity").value;
+            let dateInput = document.getElementById("dateInput").value;
+            let timeInput = document.getElementById("timeInput").value;
+            
+            if (!dateInput || !timeInput) {
+                alert("请输入日期和时间！");
+                return;
+            }
+            
+            let fromOffset = cityOffsets[fromCity];
+            let toOffset = cityOffsets[toCity];
+            
+            let date = new Date(`${dateInput}T${timeInput}:00Z`);
+            date.setUTCHours(date.getUTCHours() + toOffset - fromOffset);
+            
+            let convertedDate = date.toISOString().substr(0, 10);
+            let convertedTime = date.toISOString().substr(11, 5);
+		document.getElementById("result").innerText = `转换后时间：\n\n 当 ${fromCity} 的时间为: ${dateInput} ${timeInput} \n\n${toCity} 的时间为: ${convertedDate} ${convertedTime}`;
+        }
+    </script>
+    <style>
+	.image-container {
+	    display: flex;
+	    align-items:center;
+	}
+	.image-container p {
+	    margin-right: 10px;
+	    font-size: 18px;
+	    font-weight: bold;
+	}
+     </style>
+</head>
+<body>
+    <h2>简易时差换算器</h2>
+    <label for="fromCity">从城市(已知时间)：</label>
+    <select id="fromCity">
+        <option value="北京">北京</option>
+        <option value="纽约">纽约</option>
+        <option value="伦敦">伦敦</option>
+        <option value="东京">东京</option>
+        <option value="悉尼">悉尼</option>
+        <option value="洛杉矶">洛杉矶</option>
+    </select>
+    <br>
+    
+    <label for="dateInput">输入日期：</label>
+    <input type="date" id="dateInput">
+    <br>
+
+    <label for="timeInput">输入时间 (24小时制, HH:MM)：</label>
+    <input type="time" id="timeInput">
+    <br><br>
+
+    <label for="toCity">到城市(未知时间)：</label>
+    <select id="toCity">
+        <option value="北京">北京</option>
+        <option value="纽约">纽约</option>
+        <option value="伦敦">伦敦</option>
+        <option value="东京">东京</option>
+        <option value="悉尼">悉尼</option>
+        <option value="洛杉矶">洛杉矶</option>
+    </select>
+    <br><br>
+
+    <button onclick="convertTime()">转换</button>
+    <br><br>
+    
+    <p id="result"></p>
+
+
+
+    <div class="image-container">
+        <p>     ———— Sharon内测版 持续更新中</p>
+        <img src="https://yr-stuff.s3.us-west-1.amazonaws.com/img/yr-icon-full-face.jpg" alt="sharon头像" width="30">
+        <p>————</p>
+    </div>
+
+</body>
+</html>
