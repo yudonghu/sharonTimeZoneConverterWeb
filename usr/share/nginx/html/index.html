@@ -8,11 +8,21 @@
         function convertTime() {
             const cityOffsets = {
                 "北京": 8,
+		"印度": 5.5,
+		"俄罗斯": 3,
+		"乌克兰": 2,
+		"德国": 1,
+                "英国": 0,
+		"夏威夷 ": -10,
+                "洛杉矶": -8,
+		"凤凰城": -7,
+		"芝加哥": -6,
                 "纽约": -5,
-                "伦敦": 0,
-                "东京": 9,
+                "委内瑞拉": -4,
+		"巴西 ": -3 ,
+		"新西兰": 12,
                 "悉尼": 11,
-                "洛杉矶": -8
+                "东京": 9
             };
             
             let fromCity = document.getElementById("fromCity").value;
@@ -42,7 +52,7 @@
 	    align-items:center;
 	}
 	.image-container p {
-	    margin-right: 10px;
+	    margin-right: 10px:
 	    font-size: 18px;
 	    font-weight: bold;
 	}
@@ -52,12 +62,22 @@
     <h2>简易时差换算器</h2>
     <label for="fromCity">从城市(已知时间)：</label>
     <select id="fromCity">
-        <option value="北京">北京</option>
-        <option value="纽约">纽约</option>
-        <option value="伦敦">伦敦</option>
-        <option value="东京">东京</option>
-        <option value="悉尼">悉尼</option>
-        <option value="洛杉矶">洛杉矶</option>
+        <option value="北京">GMT+8 北京 新加坡</option>
+        <option value="印度">GMT+5.5 印度</option>
+        <option value="俄罗斯">GMT+3 俄罗斯</option>
+        <option value="乌克兰">GMT+2 乌克兰</option>
+        <option value="德国">GMT+1 德国 荷兰 法国 意大利</option>
+        <option value="英国">GMT+0 英国</option>
+        <option value="夏威夷">GMT-10 夏威夷</option>
+        <option value="洛杉矶">GMT-8 洛杉矶 旧金山 西雅图 温哥华 提华纳</option>
+        <option value="凤凰城">GMT-7 凤凰城</option>
+        <option value="芝加哥">GMT-6 芝加哥</option>
+        <option value="纽约">GMT-5 纽约 华盛顿DC 渥太华 多伦多 坎昆</option>
+        <option value="委内瑞拉">GMT-4 委内瑞拉</option>
+        <option value="巴西">GMT-3 巴西</option>
+        <option value="新西兰">GMT+12 新西兰</option>
+        <option value="悉尼">GMT+11 悉尼</option>
+        <option value="东京">GMT+9 东京</option>
     </select>
     <br>
     
@@ -71,12 +91,22 @@
 
     <label for="toCity">到城市(未知时间)：</label>
     <select id="toCity">
-        <option value="北京">北京</option>
-        <option value="纽约">纽约</option>
-        <option value="伦敦">伦敦</option>
-        <option value="东京">东京</option>
-        <option value="悉尼">悉尼</option>
-        <option value="洛杉矶">洛杉矶</option>
+        <option value="北京">GMT+8 北京 新加坡</option>
+        <option value="印度">GMT+5.5 印度</option>
+        <option value="俄罗斯">GMT+3 俄罗斯</option>
+        <option value="乌克兰">GMT+2 乌克兰</option>
+        <option value="德国">GMT+1 德国 荷兰 法国 意大利</option>
+        <option value="英国">GMT+0 英国</option>
+        <option value="夏威夷">GMT-10 夏威夷</option>
+        <option value="洛杉矶">GMT-8 洛杉矶 旧金山 西雅图 温哥华 提华纳</option>
+        <option value="凤凰城">GMT-7 凤凰城</option>
+        <option value="芝加哥">GMT-6 芝加哥</option>
+        <option value="纽约">GMT-5 纽约 华盛顿DC 渥太华 多伦多 坎昆</option>
+        <option value="委内瑞拉">GMT-4 委内瑞拉</option>
+        <option value="巴西">GMT-3 巴西</option>
+        <option value="新西兰">GMT+12 新西兰</option>
+        <option value="悉尼">GMT+11 悉尼</option>
+        <option value="东京">GMT+9 东京</option>
     </select>
     <br><br>
 
@@ -92,6 +122,8 @@
         <img src="https://yr-stuff.s3.us-west-1.amazonaws.com/img/yr-icon-full-face.jpg" alt="sharon头像" width="30">
         <p>————</p>
     </div>
-
+    <p>待更新项目:</p>
+    <p>1.夏令时切换</p>
 </body>
 </html>
+
